@@ -1,0 +1,8 @@
+안녕하세요
+I'd be happy to help, but I need clarification. The file appears to be a plain text file (`.txt`) rather than a code file, and your message seems to contain a typo.
+
+Could you please:
+1. Clarify what content you'd like to add at the placeholder
+2. Provide more context about what this code/text should do
+
+If you're looking to write actual code, please let me know the programming language and what functionality you need.
