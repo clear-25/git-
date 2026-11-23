@@ -15,9 +15,7 @@
    "layer": "blindspot_zone",
    "features": 134,
    "replaced_previous": true,
-   "dropped_keys_from_previous": [
-    "1"
-   ]
+   "dropped_keys_from_previous": []
   },
   {
    "layer": "recommended_sensors",
@@ -28,7 +26,7 @@
   {
    "layer": "existing_stations",
    "features": 5,
-   "replaced_previous": false,
+   "replaced_previous": true,
    "dropped_keys_from_previous": []
   }
  ],
@@ -126,8 +124,8 @@
    "station_id": "sensor_03",
    "name": "강동대교_관측소",
    "matched": "wamis_gangdong_bridge",
-   "distance_m": 4201,
-   "flag_coord_mismatch": true
+   "distance_m": 0,
+   "flag_coord_mismatch": false
   },
   {
    "station_id": "rec_01",
