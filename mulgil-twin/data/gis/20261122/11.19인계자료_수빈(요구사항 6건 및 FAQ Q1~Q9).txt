@@ -1,0 +1,84 @@
+====================================================================
+[Aqua-Twin] 개발팀 요구사항별 최종 전달 자료 인계 안내서
+작성자: 공간정보 담당 (배수빈) | 기준일: 2026-11-19
+====================================================================
+
+1. 개발팀 요구사항 및 대응 파일 매칭 목록
+--------------------------------------------------------------------
+- [요구사항 1] emergency_pipelines.geojson 관로 시작·끝점 ID 매핑 및 시설 ID 최종 검증
+  └─ 대응 파일: emergency_pipelines.geojson, facilities.geojson
+
+- [요구사항 2] 위성 분석 자료 (Sentinel-1/2 시기별 수역 마스크 및 MNDWI/SAR 원본) 정리
+  └─ 대응 파일: Water_*.tif, *_MNDWI.tif, MNDWI_ChangeRate_*.tif, SAR_Water_*.tif (총 9종)
+  └─ 상세 메타정보: satellite_metadata.csv
+
+- [요구사항 3] 외부 API 연동용 시설 ID ↔ WAMIS·K-water 공식 코드 매핑 표 작성
+  └─ 대응 파일: api_code_mapping.csv (obs_01, obs_02, dam_01~03 공식 코드 연계)
+
+- [요구사항 4] 개발자 설명 및 확인사항 안내 (blindspot_zone, rec_01, status, tidal 등)
+  └─ 대응 파일: README_인계안내.txt 본문 내 FAQ 참고
+
+- [요구사항 5] 데이터 공식 출처 및 메타정보 명시
+  └─ 대응 파일: satellite_metadata.csv, README_인계안내.txt
+
+
+2. 패키지 구성 파일 상세 목록
+--------------------------------------------------------------------
+[1] GIS 벡터 데이터 (좌표계: EPSG:4326 / WGS 84)
+  - facilities.geojson          : 주요 시설 19개소 (취수장 6, 정수장 8, 댐 3, 관측소 2)
+  - emergency_pipelines.geojson : 평시·비상·제안 관로 7개소 (from_id, to_id 매칭 완료)
+  - blindspot_zone.geojson      : 형산강 감조구간 실시간 EC 관측 사각지대 폴리곤
+  - recommended_sensors.geojson : 신규 다중수심 EC 센서 추천 최적 입지 (rec_01)
+
+[2] 위성 분석 래스터 데이터 (좌표계: EPSG:5186 / Korea 2000 Central Belt)
+  - Water_202508.tif / Water_202607.tif / Water_202608.tif : Sentinel-2 시기별 수역 마스크
+  - 202508_MNDWI.tif / 202607_MNDWI.tif / 202608_MNDWI.tif : Sentinel-2 MNDWI 원본
+  - MNDWI_ChangeRate_25to26.tif                            : 전년 동기 대비 MNDWI 변화율
+  - SAR_Water_202607.tif / SAR_Water_202608.tif            : Sentinel-1 SAR(VV) 수역 마스크
+
+[3] 연동 및 메타데이터 표
+  - api_code_mapping.csv        : facilities.geojson ID ↔ WAMIS·K-water 공식 코드 매핑표
+  - satellite_metadata.csv      : 위성 래스터 9종 촬영시기·센서·좌표계 메타정보
+
+
+3. 개발팀 확인사항 및 데이터 설계 근거 (FAQ)
+--------------------------------------------------------------------
+Q1. 관로(emergency_pipelines.geojson)의 from_id, to_id 연결은?
+  - 7개 관로 모두 시작점·끝점 좌표를 facilities.geojson 시설 좌표와 소수점 6자리까지
+    스냅 일치시켰으며, 출발(from_id) → 도착(to_id) 방향 기준으로 ID를 매핑했습니다.
+
+Q2. 관로 status 속성(existing / normal / proposed) 색상 표기 주의사항
+  - status는 수질 위험도가 아니라 '관로 인프라 설치·운영 상태'를 뜻합니다.
+    · normal   : 평시 가동 취수관로 (중명취수장 → 유강·제2수원지정수장)
+    · existing : 기존 구축 비상도수관로 (안계댐·영천댐 계통)
+    · proposed : 신규 광역연계 제안관로 (양덕정수장 → 유강정수장)
+  - 따라서 위험 등급 색상(빨강/주황)이 아닌 선 스타일(실선/점선 등)로 구분해 주세요.
+
+Q3. blindspot_zone.geojson이 형산강 폴리곤 1개인 이유
+  - 댐(안계·영천·임하댐)은 염수 침입 발생 구역이 아닌 '비상 시 대체 수원'이므로,
+    염수 침입 분석 영역(AOI)은 형산강 본류 감조 경계 구간 1개 폴리곤으로 구성했습니다.
+  - 산출 방식(EPSG:5186): 형산강 하천 중심선 150m 버퍼에서 기존 공식 관측소(형산교,
+    강동대교) 감시 반경 1,500m 버퍼를 차집합(Difference)하여 도출했습니다.
+
+Q4. recommended_sensors.geojson (rec_01) 도출 근거
+  - 별도 후보군 점수 비교 CSV는 없으며, QGIS 공간분석을 통해 기존 관측 사각지대 내부이자
+    핵심 취수원인 중명취수장 직하류 길목(연중 수심 약 9m 확보 지점)에 조기 경보용
+    다중수심 EC 센서(1식, 표층·중층·저층 3단)를 배치한 최적 입지 결과입니다.
+
+Q5. 일부 속성(이송 가능량, 취수장 tidal: unknown)이 비어 있는 이유
+  - 관로별 실제 이송 가능량 및 일부 도수량은 K-water·지자체 비공개 운영 데이터로
+    공식 수치가 미확보되어 제외했습니다.
+  - 취수장(int_01, int_02)의 tidal: "unknown"은 국가 공식 관측소(형산교 YES, 강동대교 NO)와
+    달리 공식 감조 지정 고시 데이터가 없는 지점임을 명시하기 위해 표기했습니다.
+
+
+4. 공식 데이터 출처 (웹 하단 및 발표 표기용)
+--------------------------------------------------------------------
+  - 수위·유량·댐 제원 및 관측소 위치 : 기후에너지환경부 국가수자원관리종합정보시스템(WAMIS),
+                                     한국수자원공사(K-water) 물정보포털(MyWater)
+  - 취수장·정수장 현황 및 생산량     : 포항시 맑은물사업본부 상수도 통계 및 급수계통 현황
+  - 하천망 및 공간 사각지대 분석     : 국토교통부 국가공간정보포털 연속수치지형도 기반
+                                     QGIS 공간분석 (EPSG:5186)
+  - 위성영상 분석 데이터             : 유럽우주국(ESA) Copernicus Sentinel-2 (MNDWI) 및
+                                     Sentinel-1 (SAR VV) 전처리 데이터
+====================================================================

@@ -1,0 +1,10 @@
+{
+    // 물길트윈: backend 폴더 기준 실행 구조(from app ...) 유지용. import 관련 설정만 조정 — 포맷터·기타 저장 시 동작은 건드리지 않음.
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "never"
+        }
+    },
+    // Pylance가 `app` 패키지를 space_hackathon/backend 기준으로 해석하게 함 → space_hackathon.backend.app 경로로 고쳐 쓰지 않음
+    "python.analysis.extraPaths": ["space_hackathon/backend"]
+}

@@ -1,0 +1,2 @@
+# GeoTIFF(약 180MB)는 로컬에만 두고 DB에는 경로만 등록
+data/gis/**/*.tif

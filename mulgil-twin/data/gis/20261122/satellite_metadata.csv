@@ -1,0 +1,15 @@
+file_name	satellite_sensor	product_type	acquisition_period	scene_id	crs	resolution_m	description
+Water_202508.tif	Sentinel-2	수역 마스크 (이진 래스터)	Aug-25	Copernicus_S2_202508_Hyeongsan	EPSG:5186	10	전년 동기 평상시 기준 수역 마스크 (SCL 구름 마스킹 적용)
+Water_202607.tif	Sentinel-2	수역 마스크 (이진 래스터)	Jul-26	Copernicus_S2_202607_Hyeongsan	EPSG:5186	10	염수 침입 사건 발생 전후 수역 마스크 (SCL 구름 마스킹 적용)
+Water_202608.tif	Sentinel-2	수역 마스크 (이진 래스터)	Aug-26	Copernicus_S2_202608_Hyeongsan	EPSG:5186	10	염수 침입 사건 이후 수역 마스크 (SCL 구름 마스킹 적용)
+202508_MNDWI.tif	Sentinel-2	MNDWI 정규수분지수	Aug-25	Copernicus_S2_202508_Hyeongsan	EPSG:5186	10	B03(Green)-B11(SWIR) 기반 정규화 수분지수 원본 (2025.08)
+202607_MNDWI.tif	Sentinel-2	MNDWI 정규수분지수	Jul-26	Copernicus_S2_202607_Hyeongsan	EPSG:5186	10	B03(Green)-B11(SWIR) 기반 정규화 수분지수 원본 (2026.07)
+202608_MNDWI.tif	Sentinel-2	MNDWI 정규수분지수	Aug-26	Copernicus_S2_202608_Hyeongsan	EPSG:5186	10	B03(Green)-B11(SWIR) 기반 정규화 수분지수 원본 (2026.08)
+MNDWI_ChangeRate_25to26.tif	Sentinel-2	MNDWI 변화율(%)	2025-08 vs 2026-08	Derived_S2_ChangeRate_25to26	EPSG:5186	10	전년 동기(2025.08) 대비 2026.08 수분지수·수역 변화율 래스터
+SAR_Water_202607.tif	Sentinel-1 SAR	SAR 수역 마스크 (VV편파)	Jul-26	Copernicus_S1_VV_202607_Hyeongsan	EPSG:5186	10	구름 차폐 보완용 C-band 레이더 VV 후방산란 기반 수역 마스크 (2026.07)
+SAR_Water_202608.tif	Sentinel-1 SAR	SAR 수역 마스크 (VV편파)	Aug-26	Copernicus_S1_VV_202608_Hyeongsan	EPSG:5186	10	구름 차폐 보완용 C-band 레이더 VV 후방산란 기반 수역 마스크 (2026.08)
+202606_MNDWI.tif	Sentinel-2	MNDWI 정규화 수분지수 원본	26-Jun	Copernicus_S2	EPSG:4326	10	B03(Green)-B11(SWIR) 기반 정규화 수분지수 원본 (2026.06)
+202606_MNDWI.tif	Sentinel-2	MNDWI 정규화 수분지수 원본	26-Jun	Copernicus_S2	EPSG:4326	10	B03(Green)-B11(SWIR) 기반 정규화 수분지수 원본 (2026.06)
+Water_202606.tif	Sentinel-2	수역 마스크	26-Jun	Copernicus_S2	EPSG:4326	10	2026.06 기준 MNDWI > 0.1 임계값 적용 수역 마스크
+MNDWI_ChangeRate_2606to08.tif	Sentinel-2	MNDWI 변화율	2026-06 vs 2026-08	Derived_S2	EPSG:4326	10	2026.06 대비 2026.08 수분지수·수역 변화율 래스터
+SAR_Water_202606.tif	Sentinel-1	SAR 수역 마스크	26-Jun	Copernicus_S1_IW_VV	EPSG:4326	10	구름 차폐 보완용 C-band 레이더 VV 후방산란 기반 수역 마스크 (2026.06)

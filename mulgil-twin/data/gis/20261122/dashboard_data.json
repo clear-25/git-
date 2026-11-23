@@ -1,0 +1,24 @@
+{
+  "project": "Waterway Twin - Hyeongsan River",
+  "baseline_date": "2026-06-12",
+  "sar_reference_date": "2026-06-15",
+  "raster_crs": "EPSG:4326",
+  "area_calculation_crs": "EPSG:5186",
+  "buffer_radius_m": 1500,
+  "metrics": {
+    "main_waterway_area_m2": 195717182.36,
+    "main_waterway_area_km2": 195.72,
+    "blindspot_area_m2": 195120705.52,
+    "blindspot_area_km2": 195.12,
+    "covered_area_m2": 596476.84,
+    "covered_area_km2": 0.6,
+    "blindspot_ratio_pct": 99.7
+  },
+  "outputs": {
+    "mndwi_raster": "202606_MNDWI.tif",
+    "water_mask_raster": "Water_202606.tif",
+    "change_rate_raster": "MNDWI_ChangeRate_2606to08.tif",
+    "sar_water_mask_raster": "SAR_Water_202606.tif",
+    "blindspot_geojson": "blindspot_zone.geojson"
+  }
+}

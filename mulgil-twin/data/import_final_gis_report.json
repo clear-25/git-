@@ -1,0 +1,372 @@
+{
+ "facilities_check": {
+  "file_features": 19,
+  "already_loaded_from_same_file": 19,
+  "reloaded": false
+ },
+ "geojson": [
+  {
+   "layer": "emergency_pipelines",
+   "features": 7,
+   "replaced_previous": true,
+   "dropped_keys_from_previous": []
+  },
+  {
+   "layer": "blindspot_zone",
+   "features": 134,
+   "replaced_previous": true,
+   "dropped_keys_from_previous": [
+    "1"
+   ]
+  },
+  {
+   "layer": "recommended_sensors",
+   "features": 1,
+   "replaced_previous": true,
+   "dropped_keys_from_previous": []
+  },
+  {
+   "layer": "existing_stations",
+   "features": 5,
+   "replaced_previous": false,
+   "dropped_keys_from_previous": []
+  }
+ ],
+ "existing_stations_excluded": [
+  "dam_01",
+  "intake_01"
+ ],
+ "facilities_added": [
+  "int_07"
+ ],
+ "routes": [
+  {
+   "route_id": "pipe_01",
+   "route_type": "existing",
+   "from_id": "dam_01",
+   "to_id": "wtp_01",
+   "updated": true,
+   "endpoints_in_facilities": true
+  },
+  {
+   "route_id": "pipe_02",
+   "route_type": "existing",
+   "from_id": "dam_01",
+   "to_id": "wtp_02",
+   "updated": true,
+   "endpoints_in_facilities": true
+  },
+  {
+   "route_id": "pipe_03",
+   "route_type": "existing",
+   "from_id": "dam_01",
+   "to_id": "wtp_05",
+   "updated": true,
+   "endpoints_in_facilities": true
+  },
+  {
+   "route_id": "pipe_04",
+   "route_type": "normal",
+   "from_id": "int_01",
+   "to_id": "wtp_01",
+   "updated": true,
+   "endpoints_in_facilities": true
+  },
+  {
+   "route_id": "pipe_05",
+   "route_type": "normal",
+   "from_id": "int_01",
+   "to_id": "wtp_02",
+   "updated": true,
+   "endpoints_in_facilities": true
+  },
+  {
+   "route_id": "pipe_06",
+   "route_type": "existing",
+   "from_id": "dam_02",
+   "to_id": "wtp_03",
+   "updated": true,
+   "endpoints_in_facilities": true
+  },
+  {
+   "route_id": "pipe_07",
+   "route_type": "proposed",
+   "from_id": "wtp_03",
+   "to_id": "wtp_01",
+   "updated": true,
+   "endpoints_in_facilities": true
+  }
+ ],
+ "routes_total": 7,
+ "blindspot_zones_by_intake": {
+  "F18": 2,
+  "F05": 12,
+  "F06": 17,
+  "F08": 21,
+  "F04": 26,
+  "F09": 56
+ },
+ "blindspot_unmapped": [],
+ "ec_stations": [
+  {
+   "station_id": "sensor_01",
+   "name": "형산강하구_관측소",
+   "matched": "wamis_hyeongsan_bridge",
+   "distance_m": 530,
+   "flag_coord_mismatch": false
+  },
+  {
+   "station_id": "sensor_02",
+   "name": "연일대교_관측소",
+   "matched": null,
+   "distance_m": null,
+   "flag_coord_mismatch": false
+  },
+  {
+   "station_id": "sensor_03",
+   "name": "강동대교_관측소",
+   "matched": "wamis_gangdong_bridge",
+   "distance_m": 4201,
+   "flag_coord_mismatch": true
+  },
+  {
+   "station_id": "rec_01",
+   "name": "중명취수장_직하류_추천지점",
+   "matched": null,
+   "distance_m": null,
+   "flag_coord_mismatch": false,
+   "virtual": true
+  }
+ ],
+ "api_code_mapping": [
+  {
+   "gis_id": "obs_01",
+   "api_code": "2101690",
+   "station_id": "wamis_hyeongsan_bridge",
+   "code_match": true
+  },
+  {
+   "gis_id": "obs_02",
+   "api_code": "2101675",
+   "station_id": "wamis_gangdong_bridge",
+   "code_match": true
+  },
+  {
+   "gis_id": "dam_01",
+   "api_code": "2101210",
+   "station_id": "kwater_dam_angye",
+   "code_match": true
+  },
+  {
+   "gis_id": "dam_02",
+   "api_code": "2012210",
+   "station_id": "kwater_dam_yeongcheon",
+   "code_match": true
+  },
+  {
+   "gis_id": "dam_03",
+   "api_code": "2002110",
+   "station_id": "kwater_dam_imha",
+   "code_match": true
+  },
+  {
+   "gis_id": "int_01",
+   "api_code": "N/A",
+   "station_id": null,
+   "code_match": null
+  },
+  {
+   "gis_id": "int_02",
+   "api_code": "N/A",
+   "station_id": null,
+   "code_match": null
+  },
+  {
+   "gis_id": "wtp_01",
+   "api_code": "N/A",
+   "station_id": null,
+   "code_match": null
+  },
+  {
+   "gis_id": "wtp_02",
+   "api_code": "N/A",
+   "station_id": null,
+   "code_match": null
+  },
+  {
+   "gis_id": "wtp_03",
+   "api_code": "N/A",
+   "station_id": null,
+   "code_match": null
+  },
+  {
+   "gis_id": "wtp_04",
+   "api_code": "N/A",
+   "station_id": null,
+   "code_match": null
+  },
+  {
+   "gis_id": "wtp_05",
+   "api_code": "N/A",
+   "station_id": null,
+   "code_match": null
+  }
+ ],
+ "rasters": [
+  {
+   "file": "202606_MNDWI.tif",
+   "product": "S2_MNDWI",
+   "crs_tag": "EPSG:4326",
+   "csv_crs": [
+    "EPSG:4326"
+   ],
+   "in_csv": true,
+   "nodata": "-3.4028234663852886e+38"
+  },
+  {
+   "file": "202607_MNDWI.tif",
+   "product": "S2_MNDWI",
+   "crs_tag": "EPSG:4326",
+   "csv_crs": [
+    "EPSG:5186"
+   ],
+   "in_csv": true,
+   "nodata": "3.40282346600000016e+38"
+  },
+  {
+   "file": "202608_MNDWI.tif",
+   "product": "S2_MNDWI",
+   "crs_tag": "EPSG:4326",
+   "csv_crs": [
+    "EPSG:5186"
+   ],
+   "in_csv": true,
+   "nodata": "3.40282346600000016e+38"
+  },
+  {
+   "file": "MNDWI_ChangeRate_2606to08.tif",
+   "product": "S2_MNDWI_CHANGE",
+   "crs_tag": "EPSG:4326",
+   "csv_crs": [
+    "EPSG:4326"
+   ],
+   "in_csv": true,
+   "nodata": "-3.4028234663852886e+38"
+  },
+  {
+   "file": "SAR_Water_202606.tif",
+   "product": "S1_WATER_MASK",
+   "crs_tag": "EPSG:4326",
+   "csv_crs": [
+    "EPSG:4326"
+   ],
+   "in_csv": true,
+   "nodata": "-3.4028234663852886e+38"
+  },
+  {
+   "file": "SAR_Water_202607.tif",
+   "product": "S1_WATER_MASK",
+   "crs_tag": "EPSG:4326",
+   "csv_crs": [
+    "EPSG:5186"
+   ],
+   "in_csv": true,
+   "nodata": "3.40282346600000016e+38"
+  },
+  {
+   "file": "SAR_Water_202608.tif",
+   "product": "S1_WATER_MASK",
+   "crs_tag": "EPSG:4326",
+   "csv_crs": [
+    "EPSG:5186"
+   ],
+   "in_csv": true,
+   "nodata": "3.40282346600000016e+38"
+  },
+  {
+   "file": "sensor_buffer_1500m_5186.gpkg",
+   "product": "OTHER",
+   "crs_tag": "EPSG:5186",
+   "csv_crs": null,
+   "in_csv": false,
+   "nodata": null
+  },
+  {
+   "file": "VV_202606_4326.tif",
+   "product": "S1_VV",
+   "crs_tag": "EPSG:4326",
+   "csv_crs": null,
+   "in_csv": false,
+   "nodata": null
+  },
+  {
+   "file": "Water_202508.tif",
+   "product": "S2_WATER_MASK",
+   "crs_tag": "EPSG:4326",
+   "csv_crs": [
+    "EPSG:5186"
+   ],
+   "in_csv": true,
+   "nodata": "3.40282346600000016e+38"
+  },
+  {
+   "file": "Water_202606.tif",
+   "product": "S2_WATER_MASK",
+   "crs_tag": "EPSG:4326",
+   "csv_crs": [
+    "EPSG:4326"
+   ],
+   "in_csv": true,
+   "nodata": "-3.4028234663852886e+38"
+  },
+  {
+   "file": "Water_202607.png",
+   "product": "S2_WATER_MASK",
+   "crs_tag": null,
+   "csv_crs": null,
+   "in_csv": false,
+   "nodata": null
+  },
+  {
+   "file": "Water_202607.tif",
+   "product": "S2_WATER_MASK",
+   "crs_tag": "EPSG:4326",
+   "csv_crs": [
+    "EPSG:5186"
+   ],
+   "in_csv": true,
+   "nodata": "3.40282346600000016e+38"
+  },
+  {
+   "file": "Water_202608.png",
+   "product": "S2_WATER_MASK",
+   "crs_tag": null,
+   "csv_crs": null,
+   "in_csv": false,
+   "nodata": null
+  },
+  {
+   "file": "Water_202608.tif",
+   "product": "S2_WATER_MASK",
+   "crs_tag": "EPSG:4326",
+   "csv_crs": [
+    "EPSG:5186"
+   ],
+   "in_csv": true,
+   "nodata": "3.40282346600000016e+38"
+  }
+ ],
+ "raster_crosscheck": {
+  "csv_rows": 14,
+  "csv_duplicate_rows": [
+   "202606_MNDWI.tif"
+  ],
+  "csv_without_file": [
+   "202508_MNDWI.tif",
+   "MNDWI_ChangeRate_25to26.tif"
+  ],
+  "file_without_csv": [
+   "VV_202606_4326.tif"
+  ]
+ }
+}

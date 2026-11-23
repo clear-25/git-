@@ -1,0 +1,13 @@
+﻿gis_id,facility_name,facility_type,agency,api_code,tidal_influence,note
+obs_01,포항시(형산교),station,WAMIS,2101690,YES,하구 2.3km 하류 기준점 (조석영향 구간)
+obs_02,경주시(강동대교),station,WAMIS,2101675,NO,하구 13.56km 상류 경계점 (비감조 구간)
+dam_01,안계댐,dam,WAMIS/K-water,2101210,NO,중명취수장 권역(유강·제2수원지·공단) 핵심 대체수원
+dam_02,영천댐,dam,WAMIS/K-water,2012210,NO,양덕정수장 계통 광역 대체수원
+dam_03,임하댐,dam,WAMIS/K-water,2002110,NO,안동시 소재 광역 수계 (영천댐 도수 연계)
+int_01,중명취수장,intake,지자체(포항시),N/A,unknown,"형산강 본류 취수원 (공공 API 코드 없음, facilities.geojson 참조)"
+int_02,제2수원지취수장,intake,지자체(포항시),N/A,unknown,형산강 본류 취수원 (공공 API 코드 없음)
+wtp_01,유강정수장,wtp,지자체(포항시),N/A,NO,"일일 생산량 42,378톤 (facilities.geojson supply_ton 참조)"
+wtp_02,제2수원지정수장,wtp,지자체(포항시),N/A,NO,"일일 생산량 49,125톤 (facilities.geojson supply_ton 참조)"
+wtp_03,양덕정수장,wtp,지자체(포항시),N/A,NO,"일일 생산량 83,289톤 (facilities.geojson supply_ton 참조)"
+wtp_04,택전정수장,wtp,지자체(포항시),N/A,NO,"일일 생산량 8,220톤 (facilities.geojson supply_ton 참조)"
+wtp_05,공단정수장,wtp,지자체(포항시),N/A,NO,"일일 생산량 21,063톤 (facilities.geojson supply_ton 참조)"
